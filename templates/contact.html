@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card text-center row justify-content-center" dir="rtl">
+        <div class="card-body">
+            <div class="container-fluid">
+                <div class="row justify-content-center" dir="rtl">
+                    <div class="col-md-5">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h2 class="card-title">تماس با ما</h2>
+                                <p class="card-text">اگر سوال یا درخواست خاصی دارید، لطفاً با ما تماس
+                                    بگیرید.</p>
+                                <form action="." method="POST" class="contact-form">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="text" name="name" id="name"
+                                               class="form-control mb-2 text-center"
+                                               placeholder="نام و نام خانوادگی" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email"
+                                               class="form-control mb-2 text-center"
+                                               placeholder="آدرس ایمیل" required>
+                                    </div>
+                                    <div class="form-group">
+                                     <textarea name="message" id="message" cols="30" rows="5"
+                                               class="form-control mb-5 text-center"
+                                               placeholder="متن پیام" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">ارسال پیام</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

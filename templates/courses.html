@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'images/bg_2.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Our Courses</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span>Courses <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section dir="rtl" class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 course d-lg-flex ftco-animate">
+                    <div class="img" style="background-image: url({% static 'images/course-1.jpg' %});"></div>
+                    <div class="text bg-light p-4">
+                        <h3 class="text-right"><a href="{% url 'math' %}">آموزش ریاضی</a></h3>
+                        <p class="subheading"></p>
+                        <p class="text-right">دوره ریاضی: اساس‌ها و کاربردها - در این دوره جذاب، مفاهیم و اصول اساسی
+                            ریاضیات را فرا بگیرید و آن‌ها را در کاربردهای مختلف تجربه کنید.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 course d-lg-flex ftco-animate">
+                    <div class="img" style="background-image: url({% static 'images/course-2.jpg' %});"></div>
+                    <div class="text bg-light p-4">
+                        <h3 class="text-right"><a href="{% url 'english' %}">آموزش زبان</a></h3>
+                        <p class="subheading"></p>
+                        <p class="text-right">دوره انگلیسی: آغازگران تا پیشرفته - با این دوره جامع، از سطح ابتدایی تا
+                            سطح پیشرفته زبان انگلیسی را یاد بگیرید و توانایی ارتباط بهتر و مفاهمه بیشتر را تقویت
+                            کنید.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

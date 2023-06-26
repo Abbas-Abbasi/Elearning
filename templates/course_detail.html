@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-md-10 course d-lg-flex ftco-animate" dir="rtl">
+
+        <div class="text bg-light p-4">
+
+            <h2 class="text-right">{{ course.title }}</h2>
+            <p class="text-right">{{ course.timestamp }}</p>
+            <p class="text-right">{{ course.content|safe }}</p>
+            <p class="text-right subheading"></p>
+            <h3 class="text-right">Lesson Comments({{ course.comments.count }})</h3>
+
+            {% for comment in course.get_comments %}
+                <div class="comment text-right">
+                    <div class="image">
+                        {% if comment.user.author %}
+                            <img src="{{ comment.user.author.profile_pic.url }}" alt="" class="img-fluid rounded-circle"
+                                 width="30px">
+                        {% else %}
+                            <img src="{% static 'images/user.png' %}" alt="" class="img-fluid rounded-circle"
+                                 width="30px">
+                        {% endif %}
+
+                        <strong>{{ comment.user.username }}</strong>
+                        <p>{{ comment.timestamp|timesince }} پیش</p>
+                    </div>
+                    <div class="comment-body">
+                        <p>{{ comment.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <br><br>
+            {% if request.user.is_authenticated %}
+                <h3 class="text-right">یک دیدگاه بگذارید</h3>
+                <div class="add-comment text-right">
+                <form method="POST" action=".">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            {{ form }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">یک دیدگاه بگذارید</button>
+                </form>
+            {% else %}
+                <a href="{% url 'account_login' %}" class="text-right">ورود به حساب کاربری برای ارسال دیدگاه</a>
+            {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock content %}
