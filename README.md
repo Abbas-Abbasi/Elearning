@@ -10,13 +10,13 @@
 1. کلون کردن مخزن:
 
    ```
-   git clone https://github.com/نام-کاربری-شما/وبسایت-آموزش-آنلاین.git
+   git clone https://github.com/Abbas-Abbasi/Elearning.git
    ```
 
 2. وارد شدن به دایرکتوری پروژه:
 
    ```
-   cd وبسایت-آموزش-آنلاین
+   cd Elearning
    ```
 
 3. ایجاد محیط مجازی:
@@ -111,13 +111,13 @@ To run the website locally, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/online-learning-website.git
+   git clone https://github.com/Abbas-Abbasi/Elearning.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd online-learning-website
+   cd Elearning
    ```
 
 3. Create a virtual environment:
